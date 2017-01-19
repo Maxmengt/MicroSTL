@@ -4,8 +4,8 @@
 namespace MicroSTL {
 	class Alloc {
 	public:
-		static void* allocate(size_t n);
-		static void deallocate(void* place_address, size_t n);
+		static void* allocate(size_t bytes);
+		static void deallocate(void* place_address, size_t bytes);
 		static void* reallocate(void* place_address, size_t old_sz, size_t new_sz);
 
 	private:
@@ -19,7 +19,7 @@ namespace MicroSTL {
 		};
 		static obj* free_list[NFREELISTS_];
 		
-		static int FREELIST_INDEX(size_t bytes) {
+		static size_t FREELIST_INDEX(size_t bytes) {
 			return (bytes + ALIGN_ - 1) / ALIGN_ - 1;
 		}
 
@@ -27,7 +27,7 @@ namespace MicroSTL {
 			return (bytes + ALIGN_ - 1) & ~(ALIGN_ - 1);
 		}
 
-		static void* refill(size_t n);
+		static void* refill(size_t bytes);
 		static char* chunk_alloc(size_t size, int &nobjs);
 
 		static char* start_free;
