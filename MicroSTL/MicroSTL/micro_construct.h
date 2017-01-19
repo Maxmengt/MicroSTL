@@ -52,4 +52,4 @@ namespace MicroSTL {
 	}
 }
 
-#endif
+#endif // !_MICRO_CONSTRUCT_H_

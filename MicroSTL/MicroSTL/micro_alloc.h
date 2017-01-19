@@ -1,6 +1,8 @@
 #ifndef _MICRO_ALLOC_H_
 #define _MICRO_ALLOC_H_
 
+#include <cstdlib>
+
 namespace MicroSTL {
 	class Alloc {
 	public:
@@ -12,9 +14,10 @@ namespace MicroSTL {
 		enum { ALIGN_ = 8 };
 		enum { MAX_BYTES_ = 128 };
 		enum { NFREELISTS_ = MAX_BYTES_ / ALIGN_ };
+		enum { NOBJS_ = 20 };
 
 		union obj {
-			union obj* next_free_node;
+			union obj* next_node;
 			char client_data[1];
 		};
 		static obj* free_list[NFREELISTS_];
@@ -28,7 +31,7 @@ namespace MicroSTL {
 		}
 
 		static void* refill(size_t bytes);
-		static char* chunk_alloc(size_t size, int &nobjs);
+		static char* chunk_alloc(size_t bytes, int &nobjs);
 
 		static char* start_free;
 		static char* end_free;
