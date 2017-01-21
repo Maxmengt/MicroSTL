@@ -5,7 +5,7 @@
 #include "micro_allocator.h"
 
 namespace MicroSTL {
-	template <class T, class Alloc = Allocator<T>>
+	template<class T, class Alloc = Allocator<T>>
 	class Vector {
 	public:
 		typedef T				value_type;
