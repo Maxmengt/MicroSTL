@@ -3,7 +3,7 @@
 
 #include "micro_alloc.h"
 
-namespace Micro_STL {
+namespace MicroSTL {
 	template<class T>
 	class Allocator {
 	public:
@@ -20,12 +20,12 @@ namespace Micro_STL {
 
 	template<class T>
 	T* Allocator<T>::allocate() {
-		return Alloc::allocate(sizeof(T));
+		return static_cast<T*>(Alloc::allocate(sizeof(T)));
 	}
 	
 	template<class T>
 	T* Allocator<T>::allocate(size_t n) {
-		return Alloc::allocate(sizeof(T) * n);
+		return static_cast<T*>(Alloc::allocate(sizeof(T) * n));
 	}
 
 	template<class T>
