@@ -14,6 +14,11 @@ namespace MicroSTL {
 		new (place_address) T1(value);
 	}
 
+	template<class T>
+	inline void construct(T* place_address) {
+		new (place_address) T();
+	}
+
 	/**
 	 * Destroy the object pointed to by a pointer type.
 	 */
