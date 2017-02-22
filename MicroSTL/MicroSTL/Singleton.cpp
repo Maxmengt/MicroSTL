@@ -57,6 +57,33 @@ Number *Number::instance() {
 	return inst;
 }
 
+class Singleton {
+public:
+	static Singleton *getInstance() {
+		if( m_Instance == NULL ) {
+			m_Instance = new Singleton();
+		}
+		return m_Instance;
+	}
+	static void destroyInstance() {
+		if( m_Instance != NULL ) {
+			delete m_Instance;
+			m_Instance = NULL;
+		}
+	}
+	int getTest() {
+		return m_Test;
+	}
+private:
+	Singleton() {
+		m_Test = 10;
+	}
+	static Singleton *m_Instance;
+	int m_Test;
+};
+
+Singleton *Singleton::m_Instance = NULL;
+
 int main()
 {
 	// Number  myInstance; - error: cannot access protected constructor
@@ -66,5 +93,10 @@ int main()
 	Number::setType("octal");
 	Number::instance()->setValue(64);
 	cout << "value is " << Number::instance()->getValue() << endl;
+
+	Singleton *singletonObj = Singleton::getInstance();
+	cout << singletonObj->getTest() << endl;
+
+	Singleton::destroyInstance();
 	return 0;
 }
