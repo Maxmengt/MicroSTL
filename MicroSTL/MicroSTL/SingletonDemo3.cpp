@@ -8,14 +8,7 @@ using namespace std;
 class Singleton {
 public:
 	static Singleton *getInstance() {
-		if( m_Instance == NULL ) {
-			Lock();
-			if( m_Instance == NULL ) {
-				m_Instance = new Singleton();
-			}
-			UnLock();
-		}
-		return m_Instance;
+		return const_cast<Singleton*>(m_Instance);
 	}
 	static void destroyInstance() {
 		if( m_Instance != NULL ) {
@@ -30,11 +23,11 @@ private:
 	Singleton() {
 		m_Test = 10;
 	}
-	static Singleton *m_Instance;
+	static const Singleton *m_Instance;
 	int m_Test;
 };
 
-Singleton *Singleton::m_Instance = NULL;
+const Singleton *Singleton::m_Instance = new Singleton();
 
 int main()
 {
