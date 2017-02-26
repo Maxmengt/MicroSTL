@@ -118,12 +118,12 @@
     <ClInclude Include="micro_alloc.h" />
     <ClInclude Include="micro_allocator.h" />
     <ClInclude Include="micro_construct.h" />
+    <ClInclude Include="micro_iterator.h" />
     <ClInclude Include="micro_list.h" />
     <ClInclude Include="micro_vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Singleton.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

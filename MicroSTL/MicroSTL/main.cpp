@@ -2,6 +2,7 @@
 #include "micro_vector.h"
 //#include "micro_list.h"
 #include "micro_algorithm.h"
+#include "micro_iterator.h"
 //#include <list>
 int main()
 {
