@@ -94,7 +94,7 @@ namespace MicroSTL {
 
 	template<class BidirectionalIterator, class Distance>
 	inline void __advance(BidirectionalIterator& i, Distance n, bidirectional_iterator_tag) {
-		if (n >= 0 ) {
+		if( n >= 0 ) {
 			while( n-- ) ++i;
 		}
 		else {
