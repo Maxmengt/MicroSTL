@@ -121,6 +121,7 @@
     <ClInclude Include="micro_iterator.h" />
     <ClInclude Include="micro_list.h" />
     <ClInclude Include="micro_type_traits.h" />
+    <ClInclude Include="micro_uninitialized.h" />
     <ClInclude Include="micro_vector.h" />
   </ItemGroup>
   <ItemGroup>

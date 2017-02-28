@@ -2,6 +2,7 @@
 #define _MICRO_CONSTRUCT_H_
 
 #include <new>
+#include "micro_type_traits.h"
 
 namespace MicroSTL {
 	/**

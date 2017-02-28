@@ -1,12 +1,16 @@
 #include <iostream>
+#include "micro_construct.h"
 #include "micro_vector.h"
 #include "micro_list.h"
 #include "micro_algorithm.h"
 #include "micro_iterator.h"
 #include "micro_type_traits.h"
+#include "micro_uninitialized.h"
+#include <typeinfo>
 
 int main()
 {
+	std::cout << typeid(int).name() << std::endl;
 	MicroSTL::Vector<int> v(2, 4);
 	v.push_back(3);
 	v.insert(v.begin(), 1);
