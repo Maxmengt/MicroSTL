@@ -1,9 +1,10 @@
 #include <iostream>
 #include "micro_vector.h"
-//#include "micro_list.h"
+#include "micro_list.h"
 #include "micro_algorithm.h"
 #include "micro_iterator.h"
-//#include <list>
+#include "micro_type_traits.h"
+
 int main()
 {
 	MicroSTL::Vector<int> v(2, 4);
