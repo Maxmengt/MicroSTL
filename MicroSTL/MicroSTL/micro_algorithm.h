@@ -14,7 +14,7 @@ namespace MicroSTL {
 			--ite;
 			if( *ite < *iite ) {
 				BidirectionalIterator bi = last;
-				while( *ite >= *bi ) --bi;
+				while( *ite >= *(--bi) ) ;
 				iter_swap(ite, bi);
 				reverse(iite, last);
 				return true;
@@ -38,7 +38,7 @@ namespace MicroSTL {
 			--ite;
 			if (*ite > *iite) {
 				BidirectionalIterator bi = last;
-				while (*ite <= *bi) --bi;
+				while (*ite <= *(--bi) );
 				iter_swap(ite, bi);
 				reverse(iite, last);
 				return true;
